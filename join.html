@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Join the STUDENT HUB Discord community — form to request an invite.">
+  <title>Join Discord — STUDENT HUB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="logo-link" href="index.html"><img src="images/logo.png" alt="Ennour logo" class="logo"></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="join.html">Join Discord</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="container join-hero">
+      <h1>Request Discord Access</h1>
+      <p class="lead">Please complete the form below. We verify all requests and then send the invite by email.</p>
+
+      <!-- Formspree action: replace the FILL_IN_ID with your Formspree ID or replace the whole form with an embedded Google Form iframe -->
+      <form id="join-form" class="join-form" method="POST" action="https://formspree.io/f/xwpnzyoj">
+        <label for="fullName">Full Name</label>
+        <input id="fullName" name="fullName" required type="text">
+
+        <label for="age">Age</label>
+        <input id="age" name="age" required type="number" min="8" max="120">
+
+        <label for="studyLevel">Study Level</label>
+        <input id="studyLevel" name="studyLevel" required type="text" placeholder="e.g. 2nd year Bac - Science">
+
+        <label for="email">Email</label>
+        <input id="email" name="email" required type="email" placeholder="you@example.com">
+
+        <!-- makes Formspree use the student email as reply-to -->
+        <input type="hidden" name="_replyto" id="_replyto">
+
+        <label class="checkbox"><input type="checkbox" id="consent" name="consent" required> I confirm I am an Ennour student and consent to be contacted by email</label>
+
+        <button class="btn btn-primary" type="submit">Request Invite</button>
+
+        <p id="form-message" class="form-message" aria-live="polite"></p>
+      </form>
+
+      <p class="small">No backend on GitHub Pages — replace the Formspree ID or embed a Google Form. See README for instructions.</p>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR</p>
+      </div>
+      <div>
+        <p>Contact: <a href="mailto:ennourstudenthub@gmail.com">ennourstudenthub@gmail.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  </body>
+</html>
