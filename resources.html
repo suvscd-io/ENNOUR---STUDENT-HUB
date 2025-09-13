@@ -11,7 +11,8 @@
   <header class="site-header">
     <div class="container nav-row">
       <a class="logo-link" href="index.html"><img src="images/logo.png" alt="Ennour logo" class="logo"></a>
-      <nav class="main-nav" aria-label="Main navigation">
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="resources.html">Resources</a>
         <a href="join.html">Join Discord</a>
@@ -24,40 +25,54 @@
       <h1>Resources</h1>
       <p class="lead">Find curated PDFs, study packs and useful links for Ennour students.</p>
     </section>
-
     <section class="container resource-grid">
-  <!-- Real Resource A -->
-  <article class="card">
-    <img src="images/icons/pasted file.​png" alt="website icon" class="card-icon">
-    <h3>AlloSchool</h3>
-    <p class="muted">Courses, PDF worksheets, exercises and tests for many subjects.</p>
-    <p class="tag">Type: Website</p>
-    <p><a class="btn btn-outline" href="https://www.alloschool.com" target="_blank" rel="noopener">Open</a></p>
-  </article>
-
-  <!-- Real Resource B -->
-  <article class="card">
-    <img src="images/icons/image.svg" alt="image icon" class="card-icon">
-    <h3>School holidays calendar (2025/2026)</h3>
-    <p class="muted">Public image of the holidays calendar for Morocco.</p>
-    <p class="tag">Type: Image</p>
-    <p><a class="btn btn-outline" href="https://www.dreamjob.ma/wp-content/uploads/2025/05/Vacances-Scolaires-20252026-au-Maroc.jpg" target="_blank" rel="noopener">Open</a></p>
-  </article>
-</section>
-
+      <!-- Real Resource A -->
+      <article class="card">
+        <img src="images/icons/pasted file.​png" alt="website icon" class="card-icon">
+        <h3>AlloSchool</h3>
+        <p class="muted">Courses, PDF worksheets, exercises and tests for many subjects.</p>
+        <p class="tag">Type: Website</p>
+        <p><a class="btn btn-outline" href="https://www.alloschool.com" target="_blank" rel="noopener">Open</a></p>
+      </article>
+      <!-- Real Resource B -->
+      <article class="card">
+        <img src="images/icons/image.svg" alt="image icon" class="card-icon">
+        <h3>School holidays calendar (2025/2026)</h3>
+        <p class="muted">Public image of the holidays calendar for Morocco.</p>
+        <p class="tag">Type: Image</p>
+        <p><a class="btn btn-outline" href="https://www.dreamjob.ma/wp-content/uploads/2025/05/Vacances-Scolaires-20252026-au-Maroc.jpg" target="_blank" rel="noopener">Open</a></p>
+      </article>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR</p>
+        <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB</p>
       </div>
-      <div>
-        <p>Contact: <a href="mailto:ennourstudenthub@gmail.com">ennourstudenthub@gmail.com</a></p>
+      <div class="footer-icons">
+        <a href="mailto:ennourstudenthub@gmail.com" class="footer-icon" title="Email">&#9993;</a>
+        <a href="https://discord.com" class="footer-icon" title="Discord">&#128172;</a>
+        <!-- Add more icons if needed -->
       </div>
     </div>
   </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+    const navToggle = document.getElementById('nav-toggle');
+    const mainNav = document.getElementById('main-nav');
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+
+    document.addEventListener('click', function(e) {
+      if(mainNav.classList.contains('open') && !mainNav.contains(e.target) && e.target !== navToggle){
+        mainNav.classList.remove('open');
+        navToggle.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
