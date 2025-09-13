@@ -4,39 +4,23 @@
 
 ---
 
-## Quick facts
-- **Branch for Pages:** `main`  
-- **Contact:** ennourstudenthub@gmail.com  
-- **Colors:** `#00d08a`, `#ffd400`, `#007bff`, `#ffffff`
+# 🎓 ENNOUR Student Hub
+
+Welcome to **ENNOUR Student Hub** — a space created to support students in their learning journey, share resources, and connect with a vibrant community. 🌟  
 
 ---
 
-## Files
-- `index.html` — Homepage  
-- `resources.html` — AlloSchool + holidays calendar  
-- `join.html` — Join form (Formspree)  
-- `style.css` — Styles  
-- `images/` — logo & icons  
-- `LICENSE` — MIT
+## 🌍 What You’ll Find
+- 📚 Useful study resources  
+- 📅 School holidays calendar  
+- 🤝 Access to our student community  
 
 ---
 
-## Publish (fast)
-1. Push files to a GitHub repo on branch `main`.  
-2. Settings → Pages → Source: `main` / root.  
-3. Open `https://<your-username>.github.io/<repo-name>/`
+## 🚀 Visit the Website
+👉 [ENNOUR Student Hub Online](https://suvscd-io.github.io/ENNOUR---STUDENT-HUB/)
 
 ---
 
-## Form (replace)
-Change the Formspree action in `join.html` to your ID:
-```html
-<form method="POST" action="https://formspree.io/f/YOUR_ID">
-```
-
-Or embed a Google Form iframe if you prefer.
-
----
-
-## License
-MIT — see `LICENSE`.
+## 📬 Contact
+For any questions or support: **ennourstudenthub@gmail.com**
