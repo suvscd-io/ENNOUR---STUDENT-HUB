@@ -1,6 +1,6 @@
 <!-- Resize the logo -->
 <p align="center">
-  <img src="images/logo.png" alt="Ennour Logo" width="120"/>
+  <img src="images/logo.png" alt="Ennour Logo" width="220"/>
 </p>
 
 # STUDENT HUB — Ennour Students 🎒
