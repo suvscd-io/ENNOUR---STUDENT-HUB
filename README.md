@@ -1,12 +1,17 @@
-# ![Ennour Logo](images/logo.png) STUDENT HUB — Ennour students 🎒
+<!-- Resize the logo -->
+<p align="center">
+  <img src="images/logo.png" alt="Ennour Logo" width="120"/>
+</p>
 
-**STUDENT HUB** — small GitHub Pages site with curated study resources and a private Discord join flow for Ennour students.
+# STUDENT HUB — Ennour Students 🎒
+
+**STUDENT HUB** is a small GitHub Pages site offering curated study resources and a private Discord join flow for Ennour students.
 
 ---
 
 # 🎓 ENNOUR Student Hub
 
-Welcome to **ENNOUR Student Hub** — a space created to support students in their learning journey, share resources, and connect with a vibrant community. 🌟  
+Welcome to **ENNOUR Student Hub** — a space designed to support students in their learning journey, share resources, and connect with a vibrant community. 🌟  
 
 ---
 
