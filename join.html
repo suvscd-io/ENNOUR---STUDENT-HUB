@@ -1,20 +1,25 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=https://discord.gg/HWU3zd9j3y">
-  <meta name="description" content="Joining the STUDENT HUB Discord community.">
+  <meta name="description" content="Join the official STUDENT HUB Discord community for Ennour students.">
   <title>Join Discord — STUDENT HUB</title>
-  <link rel="stylesheet" href="style.css?v=1.3">
+  <link rel="stylesheet" href="style.css?v=2.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
-  <header class="site-header">
+
+  <header class="site-header" id="site-header">
     <div class="container nav-row">
-      <a class="logo-link" href="index.html"><img src="images/logo.png" alt="Ennour logo" class="logo"></a>
+      <a class="logo-container" href="index.html">
+        <img src="images/logo.png" alt="Ennour School logo" class="logo">
+        <span>STUDENT HUB</span>
+      </a>
       <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
@@ -24,42 +29,38 @@
     </div>
   </header>
 
-  <main>
-    <section class="container redirect-page">
-      <h1>Redirecting to Discord...</h1>
-      <p class="lead">You are being redirected to our official Discord server.</p>
-      <p>If you are not redirected automatically, please <a href="https://discord.gg/HWU3zd9j3y">click here</a> to join.</p>
-        <div class="loader"></div>
-    </section>
+  <main class="join-page">
+    <div class="container">
+        <div data-aos="fade-up">
+            <h1>Join the Ennour Student Community!</h1>
+            <p class="lead">Connect with your fellow Ennour students, share notes, get help with homework, participate in study groups, and stay updated on all school happenings. Our Discord server is a safe and vibrant space for everyone.</p>
+            <a href="https://discord.gg/HWU3zd9j3y" class="btn btn-primary" target="_blank" rel="noopener">Join Our Discord Server</a>
+        </div>
+
+        <div class="why-join" data-aos="fade-up" data-aos-delay="200">
+            <div class="benefits-grid">
+                <div class="benefit">
+                    <span>⚡️</span> Instant Support
+                </div>
+                <div class="benefit">
+                    <span>📚</span> Study Groups
+                </div>
+                <div class="benefit">
+                    <span>📣</span> Real-time Updates
+                </div>
+            </div>
+        </div>
+    </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB</p>
-      </div>
-      <div class="footer-icons">
-        <a href="mailto:ennourstudenthub@gmail.com" class="footer-icon" title="Email">✉</a>
-        <a href="https://discord.com" class="footer-icon" title="Discord">💬</a>
-      </div>
+    <div class="container">
+      <p>For questions or support contact: <a href="mailto:ennourstudenthub@gmail.com">ennourstudenthub@gmail.com</a></p>
+      <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB</p>
     </div>
   </footer>
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
 
-    const navToggle = document.getElementById('nav-toggle');
-    const mainNav = document.getElementById('main-nav');
-    navToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('open');
-      navToggle.classList.toggle('open');
-    });
-
-    document.addEventListener('click', function(e) {
-      if(mainNav.classList.contains('open') && !mainNav.contains(e.target) && e.target !== navToggle){
-        mainNav.classList.remove('open');
-        navToggle.classList.remove('open');
-      }
-    });
-  </script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js?v=2.0"></script>
 </body>
 </html>
