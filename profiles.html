@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="View and manage student profiles.">
+  <meta name="description" content="View student profiles.">
   <title>Profiles — STUDENT HUB</title>
   <link rel="stylesheet" href="style.css?v=2.1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,11 +31,17 @@
   </header>
 
   <main id="profiles-page" class="container">
-    <!-- Initial State: Prompt to sign in -->
-    <div class="auth-container" style="text-align: center; padding: 50px 0;">
+    <div class="profiles-header">
       <h2>Student Profiles</h2>
-      <p>Please sign in to view and create profiles.</p>
-      <button id="google-signin-btn" class="btn btn-primary">Sign in with Google</button>
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for a student...">
+      </div>
+    </div>
+    <div id="profile-directory" class="profile-grid">
+      <!-- Profiles will be rendered here -->
+    </div>
+    <div class="add-profile-cta">
+      <a href="create-profile.html" class="btn btn-primary">Create Your Profile</a>
     </div>
   </main>
 
@@ -48,10 +54,8 @@
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
-  
+
   <!-- Firebase Config -->
   <script src="firebase-config.js"></script>
 
