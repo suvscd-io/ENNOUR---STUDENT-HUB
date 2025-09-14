@@ -4,21 +4,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="View student profiles.">
-  <title>Profiles — STUDENT HUB</title>
-  <link rel="stylesheet" href="style.css?v=2.1">
+  <meta name="description" content="Browse student profiles at Ennour. Connect with peers who have shared their profiles.">
+  <title>Student Profiles — STUDENT HUB</title>
+  <link rel="stylesheet" href="style.css?v=2.2">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
   <header class="site-header" id="site-header">
     <div class="container nav-row">
       <a class="logo-container" href="index.html">
-        <img src="images/logo.png" alt="Ennour School logo" class="logo">
-        <span>STUDENT HUB</span>
+        <img src="images/logo.png" alt="Student Hub Logo" class="logo">
       </a>
       <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
@@ -30,18 +29,28 @@
     </div>
   </header>
 
-  <main id="profiles-page" class="container">
-    <div class="profiles-header">
-      <h2>Student Profiles</h2>
-      <div class="search-container">
-        <input type="text" id="search-bar" placeholder="Search for a student...">
+  <main id="profiles-page">
+    <div class="container">
+      <div class="profiles-header" data-aos="fade-down">
+        <div>
+          <h1>Student Profiles</h1>
+          <p class="lead" style="margin-bottom: 0;">Connect with your peers at Ennour.</p>
+        </div>
+        <div class="search-container">
+           <input type="text" id="search-bar" placeholder="Search by name...">
+        </div>
       </div>
-    </div>
-    <div id="profile-directory" class="profile-grid">
-      <!-- Profiles will be rendered here -->
-    </div>
-    <div class="add-profile-cta">
-      <a href="create-profile.html" class="btn btn-primary">Create Your Profile</a>
+
+      <div class="profile-grid" id="profile-grid" data-aos="fade-up">
+        <!-- Profile cards will be dynamically inserted here -->
+      </div>
+
+      <div class="add-profile-cta" data-aos="fade-up" data-aos-delay="200">
+          <h2>Want to be featured?</h2>
+          <p>Create your own profile to connect with other students.</p>
+          <a href="create-profile.html" class="btn btn-primary">Create Your Profile</a>
+      </div>
+
     </div>
   </main>
 
@@ -52,18 +61,9 @@
     </div>
   </footer>
 
-  <!-- Firebase -->
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-
-  <!-- Firebase Config -->
-  <script src="firebase-config.js"></script>
-
-  <!-- Page-specific logic -->
-  <script src="profiles.js"></script>
-
-  <!-- Global scripts -->
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="profiles.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js?v=2.1"></script>
+  <script src="script.js?v=2.2"></script>
 </body>
 </html>
