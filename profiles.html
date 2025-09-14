@@ -4,8 +4,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Join the official STUDENT HUB Discord community for Ennour students.">
-  <title>Join Discord — STUDENT HUB</title>
+  <meta name="description" content="View and manage student profiles.">
+  <title>Profiles — STUDENT HUB</title>
   <link rel="stylesheet" href="style.css?v=2.1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,33 +24,18 @@
       <nav class="main-nav" id="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="resources.html">Resources</a>
-        <a href="join.html" class="active">Join Discord</a>
-        <a href="profiles.html">Profiles</a>
+        <a href="join.html">Join Discord</a>
+        <a href="profiles.html" class="active">Profiles</a>
       </nav>
     </div>
   </header>
 
-  <main class="join-page">
-    <div class="container">
-        <div data-aos="fade-up">
-            <h1>Join the Ennour Student Community!</h1>
-            <p class="lead">Connect with your fellow Ennour students, share notes, get help with homework, participate in study groups, and stay updated on all school happenings. Our Discord server is a safe and vibrant space for everyone.</p>
-            <a href="https://discord.gg/HWU3zd9j3y" class="btn btn-primary" target="_blank" rel="noopener">Join Our Discord Server</a>
-        </div>
-
-        <div class="why-join" data-aos="fade-up" data-aos-delay="200">
-            <div class="benefits-grid">
-                <div class="benefit">
-                    <span>⚡️</span> Instant Support
-                </div>
-                <div class="benefit">
-                    <span>📚</span> Study Groups
-                </div>
-                <div class="benefit">
-                    <span>📣</span> Real-time Updates
-                </div>
-            </div>
-        </div>
+  <main id="profiles-page" class="container">
+    <!-- Initial State: Prompt to sign in -->
+    <div class="auth-container" style="text-align: center; padding: 50px 0;">
+      <h2>Student Profiles</h2>
+      <p>Please sign in to view and create profiles.</p>
+      <button id="google-signin-btn" class="btn btn-primary">Sign in with Google</button>
     </div>
   </main>
 
@@ -61,6 +46,19 @@
     </div>
   </footer>
 
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+  
+  <!-- Firebase Config -->
+  <script src="firebase-config.js"></script>
+
+  <!-- Page-specific logic -->
+  <script src="profiles.js"></script>
+
+  <!-- Global scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="script.js?v=2.1"></script>
 </body>
