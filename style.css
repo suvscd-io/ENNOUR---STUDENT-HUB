@@ -52,7 +52,7 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
 
 /* --- HEADER & NAVIGATION --- */
 .site-header {
-  padding: 1.5rem 0;
+  padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -79,15 +79,8 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
   text-decoration: none;
 }
 
-.logo-container span {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: var(--text-dark-gray);
-}
-
 .logo {
-  height: 50px;
+  height: 70px; /* Increased logo size */
 }
 
 .main-nav {
