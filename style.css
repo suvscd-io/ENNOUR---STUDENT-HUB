@@ -295,7 +295,7 @@ body {
   margin-top: 2rem;
 }
 
-.resource-item {
+.resource--item {
   background: var(--white);
   padding: 2rem;
   border-radius: var(--radius);
@@ -320,6 +320,31 @@ body {
 .resource-info p {
   margin: 0;
   color: #555;
+}
+
+.redirect-page {
+  text-align: center;
+  padding: 8rem 0;
+}
+
+.redirect-page h1 {
+  font-size: 3rem;
+  color: var(--dark);
+}
+
+.loader {
+  border: 8px solid var(--bg);
+  border-top: 8px solid var(--primary);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+  margin: 3rem auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 @keyframes slideInUp {
