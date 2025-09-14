@@ -7,6 +7,30 @@ document.addEventListener('DOMContentLoaded', function () {
     once: true, // whether animation should happen only once - while scrolling down
     mirror: false, // whether elements should animate out while scrolling past them
   });
+
+  // Resource filtering
+  const filterLinks = document.querySelectorAll('.resource-sidebar a');
+  const resourceCards = document.querySelectorAll('.resource-card');
+
+  filterLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Set active link
+      filterLinks.forEach(l => l.classList.remove('active'));
+      this.classList.add('active');
+
+      const category = this.dataset.category;
+
+      resourceCards.forEach(card => {
+        if (category === 'all' || card.dataset.category === category) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
 });
 
 // Sticky Header with background on scroll
