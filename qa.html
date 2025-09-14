@@ -7,7 +7,7 @@
   <meta name="description" content="Q&A page for Ennour students.">
   <title>Q&A — STUDENT HUB</title>
   <link rel="stylesheet" href="style.css?v=2.1">
-  <link rel="stylesheet" href="qa.css">
+  <link rel="stylesheet" href="qa.css?v=1.1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -37,21 +37,28 @@
       <p>Ask a question and get answers from your peers. Please be respectful and keep questions relevant to school life.</p>
     </div>
 
-    <div class="ask-question-form">
+    <div class="ask-question-form card-style">
       <h3>Ask a New Question</h3>
       <form id="question-form">
         <div class="form-group">
           <label for="question-text">Your Question:</label>
-          <textarea id="question-text" rows="4" required></textarea>
+          <textarea id="question-text" rows="4" placeholder="Type your question here..." required></textarea>
         </div>
-        <button type="submit" class="btn btn-primary">Submit Question</button>
+        <button type="submit" class="btn btn-primary" id="submit-question-btn">
+          <span class="btn-text">Submit Question</span>
+          <span class="btn-spinner" style="display: none;"></span>
+        </button>
       </form>
     </div>
 
     <div id="qa-list" class="qa-list">
+      <!-- Loading indicator -->
+      <div class="loader" id="loader"></div>
       <!-- Questions and answers will be loaded here -->
     </div>
   </main>
+
+  <div id="toast-container"></div>
 
   <footer class="site-footer">
     <div class="container">
@@ -68,7 +75,7 @@
   <script src="firebase-config.js"></script>
 
   <!-- Page-specific logic -->
-  <script src="qa.js"></script>
+  <script src="qa.js?v=1.1"></script>
 
   <!-- Global scripts -->
   <script src="script.js?v=2.1"></script>
