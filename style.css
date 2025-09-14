@@ -371,6 +371,44 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
     font-size: 1.5rem;
 }
 
+/* --- CONTACT PAGE --- */
+.contact-form-container {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 3rem;
+  background: var(--card-background);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.contact-form-container h1, .contact-form-container p {
+  text-align: center;
+}
+#contact-form .form-group { margin-bottom: 1.5rem; }
+#contact-form label { 
+  display: block; 
+  font-weight: 600; 
+  margin-bottom: 0.5rem; 
+}
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form select,
+#contact-form textarea {
+  width: 100%;
+  padding: 0.875rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--background-white);
+}
+#contact-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+}
+
 /* --- FOOTER --- */
 .site-footer {
   padding: 3rem 0;
