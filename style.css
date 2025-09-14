@@ -335,6 +335,10 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
 }
 .resource-card h3 { margin-bottom: 0.25rem; }
 
+.resource-info {
+    flex-grow: 1;
+}
+
 /* --- JOIN DISCORD PAGE --- */
 .join-page {
     text-align: center;
