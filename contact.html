@@ -1,12 +1,11 @@
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Contact the Ennour Student Hub administrator.">
-  <title>Contact — STUDENT HUB</title>
-  <link rel="stylesheet" href="style.css?v=2.4">
+  <meta name="description" content="Contact the STUDENT HUB administrator. Send a message for support or inquiries.">
+  <title>Contact Us — STUDENT HUB</title>
+  <link rel="stylesheet" href="style.css?v=2.5">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -30,39 +29,39 @@
   </header>
 
   <main>
-    <div class="contact-form-container">
+    <div class="form-container">
       <h1>Contact Us</h1>
-      <p>Have a question or suggestion? Fill out the form below to send a message to the site administrator.</p>
-      
-      <form action="https://formsubmit.co/ennourstudenthub@gmail.com" method="POST">
+      <p>Have a question or need support? Fill out the form below, and the administrator will get back to you as soon as possible.</p>
+      <form id="contact-form" action="https://api.formsubmit.co/ennourstudenthub@gmail.com" method="POST">
         
-        <input type="hidden" name="_subject" value="New Message from Student Hub Contact Form!">
+        <!-- Honeypot -->
+        <input type="text" name="_honey" style="display:none">
+        <!-- Disable Captcha -->
+        <input type="hidden" name="_captcha" value="false">
+        <!-- Thank you page -->
         <input type="hidden" name="_next" value="https://enrsth.vercel.app/thank-you.html">
 
         <div class="form-group">
           <label for="name">Full Name</label>
           <input type="text" id="name" name="name" required>
         </div>
-
         <div class="form-group">
           <label for="email">Email Address</label>
           <input type="email" id="email" name="email" required>
         </div>
-
         <div class="form-group">
           <label for="level">School Level</label>
           <select id="level" name="level" required>
-            <option value="" disabled selected>Select your level...</option>
+            <option value="" disabled selected>Select your level</option>
             <option value="Tronc Commun">Tronc Commun</option>
-            <option value="1ere Annee Bac">1ère Année Bac</option>
-            <option value="2eme Annee Bac">2ème Année Bac</option>
+            <option value="1st Year Bac">1st Year Bac</option>
+            <option value="2nd Year Bac">2nd Year Bac</option>
             <option value="Other">Other</option>
           </select>
         </div>
-
         <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="6" required></textarea>
+          <textarea id="message" name="message" rows="5" required></textarea>
         </div>
 
         <div class="form-actions">
@@ -79,7 +78,7 @@
       <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB</p>
     </div>
   </footer>
-  
-  <script src="script.js?v=2.4"></script>
+
+  <script src="script.js?v=2.5"></script>
 </body>
 </html>
