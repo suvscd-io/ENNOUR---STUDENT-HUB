@@ -128,7 +128,15 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
   width: 100%;
 }
 
-.nav-toggle { display: none; } /* For mobile */
+.nav-toggle { 
+  display: none; 
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--text-dark-gray);
+  cursor: pointer;
+  z-index: 1001;
+}
 
 /* --- HERO SECTION --- */
 .hero {
@@ -520,14 +528,36 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
 
 /* --- RESPONSIVENESS --- */
 @media (max-width: 991px) {
-  .main-nav { display: none; } /* Hide for now, will implement mobile menu */
+  .main-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--background-white);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .main-nav.is-open {
+    transform: translateX(0);
+    display: flex;
+  }
+
+  .main-nav a {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+  
   .nav-toggle {
     display: block;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
   }
+
   .hero-grid { text-align: center; }
   .hero-ctas { justify-content: center; }
   .hero-media { display: none; } /* Hide illustration on smaller screens for now */
@@ -540,6 +570,11 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
       display: flex;
       overflow-x: auto;
       padding-bottom: 1rem;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE 10+ */
+  }
+  .resource-sidebar ul::-webkit-scrollbar { 
+      display: none; /* Chrome, Safari, Opera*/
   }
   .resource-sidebar li a { white-space: nowrap; }
 }
@@ -549,9 +584,16 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
     flex-direction: column;
     align-items: stretch;
   }
+  .container { padding: 0 1rem; }
+  .hero { padding: 3rem 0; }
+  .features-grid { grid-template-columns: 1fr; }
+  .resource-card { flex-direction: column; align-items: flex-start; }
+  .btn { width: 100%; }
+  .hero-ctas { flex-direction: column; }
 }
 
 /* --- ANIMATIONS (AOS) --- */
 [data-aos] {
   transition-property: transform, opacity;
 }
+

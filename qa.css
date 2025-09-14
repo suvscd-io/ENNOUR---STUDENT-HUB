@@ -1,0 +1,142 @@
+
+/* Q&A Page Specific Styles */
+
+#qa-page {
+    padding-top: 40px;
+    padding-bottom: 60px;
+}
+
+.qa-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.qa-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.qa-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.ask-question-form {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    border: 1px solid #eee;
+}
+
+.ask-question-form h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.qa-list {
+    display: grid;
+    gap: 30px;
+}
+
+.qa-item {
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 25px;
+}
+
+.qa-item .question {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.answer-form {
+    margin-top: 20px;
+}
+
+.answer-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.answers {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.answer {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.answer:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.answer p {
+    margin: 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 768px) {
+    .qa-header h2 {
+        font-size: 2rem;
+    }
+
+    .ask-question-form {
+        padding: 20px;
+    }
+
+    .qa-item {
+        padding: 20px;
+    }
+
+    .qa-item .question {
+        font-size: 1.15rem;
+    }
+
+    .answer-form textarea {
+        padding: 10px;
+    }
+}
