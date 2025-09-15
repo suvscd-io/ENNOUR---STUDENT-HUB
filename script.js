@@ -49,17 +49,17 @@ const mainNav = document.getElementById('main-nav');
 
 if (navToggle) {
   navToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('open');
-    navToggle.classList.toggle('open');
+    mainNav.classList.toggle('is-open');
+    navToggle.classList.toggle('is-open');
   });
 }
 
 // Optional: Close mobile menu when clicking outside
 document.addEventListener('click', function(e) {
-  if (mainNav && mainNav.classList.contains('open')) {
+  if (mainNav && mainNav.classList.contains('is-open')) {
     if (!mainNav.contains(e.target) && e.target !== navToggle) {
-      mainNav.classList.remove('open');
-      navToggle.classList.remove('open');
+      mainNav.classList.remove('is-open');
+      navToggle.classList.remove('is-open');
     }
   }
 });
