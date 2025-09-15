@@ -31,6 +31,16 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   });
+  
+  // Mobile Navigation Toggle
+  const navToggle = document.getElementById('nav-toggle');
+  const mainNav = document.getElementById('main-nav');
+
+  if (navToggle) {
+    navToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('is-open');
+    });
+  }
 });
 
 // Sticky Header with background on scroll
@@ -40,27 +50,6 @@ window.addEventListener('scroll', () => {
     header.classList.add('scrolled');
   } else {
     header.classList.remove('scrolled');
-  }
-});
-
-// Mobile Navigation Toggle
-const navToggle = document.getElementById('nav-toggle');
-const mainNav = document.getElementById('main-nav');
-
-if (navToggle) {
-  navToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('is-open');
-    navToggle.classList.toggle('is-open');
-  });
-}
-
-// Optional: Close mobile menu when clicking outside
-document.addEventListener('click', function(e) {
-  if (mainNav && mainNav.classList.contains('is-open')) {
-    if (!mainNav.contains(e.target) && e.target !== navToggle) {
-      mainNav.classList.remove('is-open');
-      navToggle.classList.remove('is-open');
-    }
   }
 });
 
