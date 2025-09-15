@@ -1,0 +1,72 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Login — STUDENT HUB</title>
+  <link rel="stylesheet" href="style.css?v=4.1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="container nav-row">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Student Hub Logo" class="logo">
+      </a>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="resources.html">Resources</a>
+        <a href="forum.html">Forum</a>
+        <a href="contact.html">Contact</a>
+        <a href="signup.html" class="btn btn-secondary">Sign Up</a>
+      </nav>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="page-header" data-aos="fade-up">
+        <h1>Welcome Back</h1>
+        <p class="lead">Log in to participate in the community.</p>
+      </div>
+      
+      <div class="form-container" data-aos="fade-up" data-aos-delay="100">
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+          <div id="form-status" style="margin-top: 1rem; text-align: right;"></div>
+        </form>
+        <p style="margin-top: 1rem; text-align: center;">Don't have an account? <a href="signup.html">Sign up</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="firebase-config.js"></script>
+  <script src="auth.js"></script>
+  <script src="script.js?v=4.1"></script>
+</body>
+</html>
