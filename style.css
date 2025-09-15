@@ -79,7 +79,8 @@ a:hover { color: var(--accent-teal); }
 }
 
 .logo {
-  height: 70px;
+  height: 90px;
+  width: auto;
 }
 
 .nav-toggle {
