@@ -313,10 +313,37 @@ main {
 .site-footer {
   background-color: var(--card-background);
   color: var(--text-light-gray);
-  padding: 3rem 0;
+  padding: 2.5rem 0;
   margin-top: 4rem;
   border-top: 1px solid #EAECEF;
 }
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.site-footer p {
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.footer-left {
+  text-align: left;
+}
+
+.footer-right {
+  text-align: right;
+}
+
+.built-by-students {
+  font-style: italic;
+  color: #888;
+}
+
 
 /* --- RESPONSIVE STYLES (Mobile First) --- */
 @media (max-width: 767px) {
@@ -349,6 +376,14 @@ main {
   .main-nav a {
     font-size: 1.5rem;
     margin: 1.2rem 0;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-left, .footer-right {
+    text-align: center;
   }
 }
 
