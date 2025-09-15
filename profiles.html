@@ -6,65 +6,60 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Browse student profiles at Ennour. Connect with peers who have shared their profiles.">
   <title>Student Profiles — STUDENT HUB</title>
-  <link rel="stylesheet" href="style.css?v=3.0">
+  <link rel="stylesheet" href="style.css?v=4.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
   <header class="site-header" id="site-header">
     <div class="container nav-row">
-      <a class="logo-container" href="index.html">
-        <img src="images/ChatGPT Image Sep 15, 2025, 04_18_52 PM.png" alt="Student Hub Logo" class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Student Hub Logo" class="logo">
       </a>
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <nav class="main-nav" id="main-nav">
         <a href="index.html">Home</a>
         <a href="resources.html">Resources</a>
         <a href="join.html">Join Discord</a>
         <a href="profiles.html" class="active">Profiles</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     </div>
   </header>
 
   <main id="profiles-page">
     <div class="container">
-      <div class="profiles-header" data-aos="fade-down">
-        <div>
-          <h1>Student Profiles</h1>
-          <p class="lead" style="margin-bottom: 0;">Connect with your peers at Ennour.</p>
-        </div>
-        <div class="search-container">
-           <input type="text" id="search-bar" placeholder="Search by name...">
-        </div>
+      <div class="page-header" data-aos="fade-up">
+        <h1>Student Profiles</h1>
+        <p class="lead">Connect with your peers at Ennour. Search for students by name or browse the directory.</p>
+        <input type="text" id="search-bar" placeholder="Search by name...">
       </div>
 
-      <div class="profile-grid" id="profile-grid" data-aos="fade-up">
+      <div class="card-grid" id="profile-grid" data-aos="fade-up" data-aos-delay="200">
         <!-- Profile cards will be dynamically inserted here -->
       </div>
 
-      <div class="add-profile-cta" data-aos="fade-up" data-aos-delay="200">
+      <div class="add-profile-cta" data-aos="fade-up" style="margin-top: 4rem; padding-top: 4rem; border-top: 1px solid #EAECEF;">
           <h2>Want to be featured?</h2>
           <p>Create your own profile to connect with other students.</p>
           <a href="create-profile.html" class="btn btn-primary">Create Your Profile</a>
       </div>
-
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>For questions or support contact: <a href="mailto:ennourstudenthub@gmail.com">ennourstudenthub@gmail.com</a></p>
-      <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB</p>
+      <p>For questions or support, contact <a href="mailto:ennourstudenthub@gmail.com">ennourstudenthub@gmail.com</a></p>
+      <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB. All Rights Reserved.</p>
     </div>
   </footer>
 
   <script type="module" src="firebase-config.js"></script>
   <script type="module" src="profiles.js"></script>
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js?v=3.0"></script>
+  <script src="script.js?v=4.0"></script>
 </body>
 </html>

@@ -1,61 +1,53 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Thank You! — STUDENT HUB</title>
-  <link rel="stylesheet" href="style.css?v=3.0">
+  <meta name="description" content="Thank you for your submission.">
+  <title>Thank You — STUDENT HUB</title>
+  <link rel="stylesheet" href="style.css?v=4.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    .thank-you-page {
-      text-align: center;
-      padding: 6rem 2rem;
-    }
-    .thank-you-page h1 {
-      color: var(--primary-purple);
-      margin-bottom: 1rem;
-    }
-    .thank-you-page p {
-      max-width: 500px;
-      margin: 0 auto 2rem auto;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
   <header class="site-header" id="site-header">
     <div class="container nav-row">
-      <a class="logo-container" href="index.html">
-        <img src="images/icons/student-hub-logo.png" alt="Student Hub Logo" class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Student Hub Logo" class="logo">
       </a>
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <nav class="main-nav" id="main-nav">
         <a href="index.html">Home</a>
         <a href="resources.html">Resources</a>
         <a href="join.html">Join Discord</a>
         <a href="profiles.html">Profiles</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     </div>
   </header>
 
-  <main class="thank-you-page">
+  <main>
     <div class="container">
-      <h1>Thank You!</h1>
-      <p>Your message has been sent successfully. The administrator will get back to you shortly.</p>
-      <a href="index.html" class="btn btn-primary">Return to Home</a>
+      <div class="page-header" data-aos="fade-up" style="padding: 4rem 0;">
+        <h1>Thank You!</h1>
+        <p class="lead">Your submission has been received. We'll get back to you shortly if a response is needed.</p>
+        <a href="index.html" class="btn btn-primary">Return to Homepage</a>
+      </div>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>For questions or support contact: <a href="mailto:ennourstudenthub@gmail.com">ennourstudenthub@gmail.com</a></p>
-      <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB</p>
+      <p>For questions or support, contact <a href="mailto:ennourstudenthub@gmail.com">ennourstudenthub@gmail.com</a></p>
+      <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB. All Rights Reserved.</p>
     </div>
   </footer>
-
-  <script src="script.js?v=3.0"></script>
+  
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js?v=4.0"></script>
 </body>
 </html>

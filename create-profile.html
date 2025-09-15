@@ -4,96 +4,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Create your student profile on the Ennour Student Hub.">
+  <meta name="description" content="Create your student profile for the Ennour Student Hub.">
   <title>Create Profile — STUDENT HUB</title>
-  <link rel="stylesheet" href="style.css?v=3.0">
+  <link rel="stylesheet" href="style.css?v=4.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
   <header class="site-header" id="site-header">
     <div class="container nav-row">
-      <a class="logo-container" href="index.html">
-        <img src="images/ChatGPT Image Sep 15, 2025, 04_18_52 PM.png" alt="Student Hub Logo" class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="Student Hub Logo" class="logo">
       </a>
-      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
-      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <nav class="main-nav" id="main-nav">
         <a href="index.html">Home</a>
         <a href="resources.html">Resources</a>
         <a href="join.html">Join Discord</a>
-        <a href="profiles.html">Profiles</a>
+        <a href="profiles.html" class="active">Profiles</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
     </div>
   </header>
 
   <main>
-    <div class="profile-form-container">
-      <h1>Create Your Profile</h1>
-      <p>Share your information to be featured on the student profiles page. Please be professional and respectful.</p>
-      <form id="profile-form">
-        
-        <div class="form-group avatar-upload">
-          <label for="image-file-input">Profile Picture</label>
-          <img src="images/default-avatar.png" id="image-preview" alt="Avatar preview">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('image-file-input').click();">Choose Image</button>
-          <input type="file" id="image-file-input" accept="image/*" style="display: none;">
-          <div id="upload-progress" class="progress-bar" style="display: none;"><div id="upload-progress-fill" class="progress-bar-fill"></div></div>
-        </div>
+    <div class="container">
+      <div class="page-header" data-aos="fade-up">
+        <h1>Create Your Profile</h1>
+        <p class="lead">Share your profile with other students. Fill out the form below to be featured on the profiles page.</p>
+      </div>
+      
+      <div class="form-container" data-aos="fade-up" data-aos-delay="100">
+        <form id="create-profile-form">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="fullName" required>
+          </div>
 
-        <div class="form-group">
-          <label for="name">Full Name</label>
-          <input type="text" id="name" required>
-        </div>
-        <div class="form-group">
-          <label for="description">Short Bio / Quote</label>
-          <textarea id="description" rows="3"></textarea>
-        </div>
+          <div class="form-group">
+            <label for="profile-image">Profile Image</label>
+            <input type="file" id="profile-image" name="profileImage" accept="image/*" required>
+          </div>
 
-        <fieldset>
-            <legend>Social Links</legend>
-            <div class="form-group">
-                <label for="linkedin">LinkedIn Profile URL</label>
-                <input type="url" id="linkedin">
-            </div>
-            <div class="form-group">
-                <label for="github">GitHub Profile URL</label>
-                <input type="url" id="github">
-            </div>
-            <div class="form-group">
-                <label for="twitter">Twitter Profile URL</label>
-                <input type="url" id="twitter">
-            </div>
-            <div class="form-group">
-                <label for="instagram">Instagram Profile URL</label>
-                <input type="url" id="instagram">
-            </div>
-        </fieldset>
+          <div class="form-group">
+            <label for="school-level">School Level</label>
+            <select id="school-level" name="schoolLevel" required>
+              <option value="" disabled selected>Select your level...</option>
+              <option value="Tronc Commun">Tronc Commun</option>
+              <option value="1ere Annee Bac">1ère Année Bac</option>
+              <option value="2eme Annee Bac">2ème Année Bac</option>
+            </select>
+          </div>
 
-        <div class="form-actions">
-          <button type="submit" class="btn btn-primary">Create Profile</button>
-        </div>
+          <div class="form-group">
+            <label for="branch">Branch (if applicable)</label>
+            <input type="text" id="branch" name="branch" placeholder="e.g., PC, SVT, Eco, Maths A...">
+          </div>
+          
+          <div class="form-group">
+            <label for="social-links">Social Media (Optional)</label>
+            <input type="url" id="social-instagram" name="instagram" placeholder="Instagram Profile URL">
+            <input type="url" id="social-linkedin" name="linkedin" placeholder="LinkedIn Profile URL" style="margin-top: 0.5rem;">
+          </div>
 
-      </form>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary" id="submit-btn">Create Profile</button>
+          </div>
+          <div id="form-status" style="margin-top: 1rem; text-align: right;"></div>
+        </form>
+      </div>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>For questions or support contact: <a href="mailto:ennourstudenthub@gmail.com">ennourstudenthub@gmail.com</a></p>
-      <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB</p>
+      <p>For questions or support, contact <a href="mailto:ennourstudenthub@gmail.com">ennourstudenthub@gmail.com</a></p>
+      <p>&copy; <span id="year"></span> Groupe Scolaire ENNOUR — STUDENT HUB. All Rights Reserved.</p>
     </div>
   </footer>
   
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
-  
-  <script src="firebase-config.js"></script>
-  <script src="create-profile.js"></script>
-  <script src="script.js?v=3.0"></script>
-
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="script.js?v=4.0"></script>
+  <script type="module" src="create-profile.js"></script>
 </body>
 </html>

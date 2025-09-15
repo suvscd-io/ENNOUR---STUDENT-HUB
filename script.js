@@ -1,60 +1,75 @@
 
-// Initialize AOS (Animate on Scroll)
-document.addEventListener('DOMContentLoaded', function () {
+'use strict';
+
+/**
+ * Initializes the application.
+ * Sets up event listeners and year display.
+ */
+function init() {
+  // Initialize AOS (Animate on Scroll)
   AOS.init({
-    duration: 800, // values from 0 to 3000, with step 50ms
-    easing: 'ease-in-out-quad', // default easing for AOS animations
-    once: true, // whether animation should happen only once - while scrolling down
-    mirror: false, // whether elements should animate out while scrolling past them
+    duration: 800,
+    once: true,
+    offset: 50,
   });
 
-  // Resource filtering
-  const filterLinks = document.querySelectorAll('.resource-sidebar a');
-  const resourceCards = document.querySelectorAll('.resource-card');
-
-  filterLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-
-      // Set active link
-      filterLinks.forEach(l => l.classList.remove('active'));
-      this.classList.add('active');
-
-      const category = this.dataset.category;
-
-      resourceCards.forEach(card => {
-        if (category === 'all' || card.dataset.category === category) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    });
-  });
-  
-  // Mobile Navigation Toggle
+  // Mobile navigation toggle
   const navToggle = document.getElementById('nav-toggle');
   const mainNav = document.getElementById('main-nav');
-
-  if (navToggle) {
+  if (navToggle && mainNav) {
     navToggle.addEventListener('click', () => {
       mainNav.classList.toggle('is-open');
+      // Simple accessibility for the toggle button
+      const isOpen = mainNav.classList.contains('is-open');
+      navToggle.setAttribute('aria-expanded', isOpen);
     });
   }
-});
 
-// Sticky Header with background on scroll
-const header = document.getElementById('site-header');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
+  // Header scroll effect
+  const header = document.getElementById('site-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
   }
-});
 
-// Set current year in footer
-const yearSpan = document.getElementById('year');
-if(yearSpan) {
+  // Resource page category filter
+  const resourceFilters = document.querySelectorAll('.resource-header a');
+  const resourceCards = document.querySelectorAll('.resource-card');
+
+  if (resourceFilters.length > 0 && resourceCards.length > 0) {
+    resourceFilters.forEach(filter => {
+      filter.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Update active filter button
+        resourceFilters.forEach(btn => btn.classList.remove('active'));
+        filter.classList.add('active');
+
+        const category = filter.dataset.category;
+
+        // Show/hide cards based on category
+        resourceCards.forEach(card => {
+          if (category === 'all' || card.dataset.category === category) {
+            card.style.display = 'flex'; // Or 'block', depending on your styling
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+  
+  // Set current year in the footer
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
+  }
 }
+
+// Run initialization when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', init);
