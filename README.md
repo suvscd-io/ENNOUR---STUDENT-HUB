@@ -23,7 +23,7 @@ Welcome to **ENNOUR Student Hub** — a space designed to support students in th
 ---
 
 ## 🚀 Visit the Website
-👉 [ENNOUR Student Hub Online](https://suvscd-io.github.io/enrsth/)
+👉 [ENNOUR Student Hub Online](https://ennourstudent-hub.web.app/index.html)
 
 ---
 
