@@ -133,8 +133,8 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
 
 /* --- HERO SECTION --- */
 .hero {
-  padding: 5rem 0;
-  text-align: left;
+  padding: 6rem 0;
+  text-align: center;
 }
 
 .hero-grid {
@@ -146,7 +146,7 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
 
 @media (min-width: 992px) {
   .hero-grid {
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 1fr;
   }
 }
 
@@ -167,6 +167,7 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
   flex-wrap: wrap;
   gap: 1rem;
   margin-top: 2rem;
+  justify-content: center;
 }
 
 .btn {
@@ -211,6 +212,15 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
   max-width: 500px;
   height: auto;
   border-radius: var(--radius);
+}
+
+.hero-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
 }
 
 /* --- KEY FEATURES SECTION --- */
@@ -468,14 +478,7 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
 
 .profile-card:hover {
   transform: translateY(-8px);
-  box-.hero-text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-}shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-hover);
 }
 
 .profile-avatar {
@@ -627,14 +630,7 @@ p { margin-bottom: 1.5rem; color: var(--text-light-gray); }
     align-items: stretch;
   }
   .container { padding: 0 1rem; }
-  .hero { padding: .hero-text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-} 3rem 0; }
+  .hero { padding: 3rem 0; }
   .features-grid { grid-template-columns: 1fr; }
   .resource-card { flex-direction: column; align-items: flex-start; }
   .btn { width: 100%; }
