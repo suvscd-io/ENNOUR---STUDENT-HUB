@@ -1,15 +1,19 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialize AOS
   AOS.init();
 
   const db = firebase.firestore();
+  const storage = firebase.storage();
   const profileGrid = document.getElementById('profile-grid');
   const searchBar = document.getElementById('search-bar');
 
   let allProfiles = [];
+  const isAdmin = new URLSearchParams(window.location.search).get('admin') === 'true';
 
-  // Event Listeners
+  if (isAdmin) {
+    document.body.classList.add('admin-mode');
+  }
+
   searchBar.addEventListener('input', (e) => {
     const searchTerm = e.target.value.toLowerCase();
     const filteredProfiles = allProfiles.filter(profile => 
@@ -18,11 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
     renderProfiles(filteredProfiles);
   });
 
-  // Functions
   function fetchAndRenderProfiles() {
     db.collection('studentProfiles').orderBy('createdAt', 'desc').get()
       .then(snapshot => {
-        allProfiles = snapshot.docs.map(doc => doc.data());
+        allProfiles = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         renderProfiles(allProfiles);
       })
       .catch(error => {
@@ -40,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     profileGrid.innerHTML = profiles.map(profile => `
-      <div class="card profile-card" data-aos="fade-up">
+      <div class="card profile-card" data-aos="fade-up" id="profile-${profile.id}">
         <div class="card-header">
           <img src="${profile.profileImageUrl || 'images/default-avatar.png'}" alt="${profile.fullName}" class="profile-avatar">
           <div class="profile-identity">
@@ -52,13 +55,36 @@ document.addEventListener('DOMContentLoaded', function() {
           ${profile.socialMedia?.instagram ? `<a href="${profile.socialMedia.instagram}" target="_blank"><img src="images/instagram.svg" alt="Instagram"></a>` : ''}
           ${profile.socialMedia?.discord ? `<a href="${profile.socialMedia.discord}" target="_blank"><img src="images/discord.svg" alt="Discord"></a>` : ''}
         </div>
+        ${isAdmin ? `<button class="delete-btn" data-id="${profile.id}" data-image-path="${profile.profileImagePath}">Delete</button>` : ''}
       </div>
     `).join('');
 
-    // Refresh AOS to apply animations to new elements
     AOS.refresh();
   }
 
-  // Initial Load
+  profileGrid.addEventListener('click', async (e) => {
+    if (e.target.classList.contains('delete-btn')) {
+      const profileId = e.target.dataset.id;
+      const imagePath = e.target.dataset.imagePath;
+
+      if (confirm('Are you sure you want to delete this profile?')) {
+        try {
+          await db.collection('studentProfiles').doc(profileId).delete();
+          
+          if (imagePath) {
+            await storage.ref(imagePath).delete();
+          }
+
+          document.getElementById(`profile-${profileId}`).remove();
+          alert('Profile deleted successfully.');
+
+        } catch (error) {
+          console.error('Error deleting profile:', error);
+          alert('Failed to delete profile. Check the console for details.');
+        }
+      }
+    }
+  });
+
   fetchAndRenderProfiles();
 });

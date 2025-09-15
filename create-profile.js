@@ -1,19 +1,15 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Firebase services
   const db = firebase.firestore();
   const storage = firebase.storage();
 
-  // DOM elements
   const profileForm = document.getElementById('create-profile-form');
   const imageFileInput = document.getElementById('profile-image');
   const submitBtn = profileForm.querySelector('button[type="submit"]');
   const formStatus = document.getElementById('form-status');
 
-  // --- Event Listeners ---
   profileForm.addEventListener('submit', saveProfile);
 
-  // --- Functions ---
   async function saveProfile(e) {
     e.preventDefault();
     submitBtn.disabled = true;
@@ -26,11 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
         throw new Error('Profile image is required.');
       }
 
-      // Upload image first
-      const profileImageUrl = await uploadProfileImage(file);
+      const filePath = `profile_images/${Date.now()}_${file.name}`;
+      const profileImageUrl = await uploadProfileImage(file, filePath);
 
-      // Prepare data for Firestore
-      const docRef = db.collection('studentProfiles').doc(); // Auto-generate ID
+      const docRef = db.collection('studentProfiles').doc();
       const now = firebase.firestore.FieldValue.serverTimestamp();
       const payload = {
         uid: docRef.id,
@@ -38,9 +33,10 @@ document.addEventListener('DOMContentLoaded', function() {
         schoolLevel: document.getElementById('school-level').value,
         branch: document.getElementById('branch').value,
         profileImageUrl: profileImageUrl,
+        profileImagePath: filePath, // Store the image path for deletion
         socialMedia: {
           instagram: document.getElementById('social-instagram').value,
-          discord: document.getElementById('social-discord').value, 
+          discord: document.getElementById('social-discord').value,
         },
         createdAt: now,
         updatedAt: now,
@@ -63,14 +59,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  function uploadProfileImage(file) {
-    const filePath = `profile_images/${Date.now()}_${file.name}`;
+  function uploadProfileImage(file, filePath) {
     const fileRef = storage.ref(filePath);
     const uploadTask = fileRef.put(file);
 
     return new Promise((resolve, reject) => {
       uploadTask.on('state_changed',
-        null, // No progress callback needed for this version
+        null, 
         error => {
           console.error('Upload Error:', error);
           reject(new Error('Failed to upload image.'));
