@@ -36,11 +36,11 @@
       <form id="profile-form">
         
         <div class="form-group avatar-upload">
-          <label for="avatar-upload">Profile Picture</label>
+          <label for="image-file-input">Profile Picture</label>
           <img src="images/default-avatar.png" id="image-preview" alt="Avatar preview">
-          <button type="button" class="btn btn-secondary" onclick="document.getElementById('avatar-input').click();">Choose Image</button>
-          <input type="file" id="avatar-input" accept="image/*">
-          <div class="progress-bar" style="display: none;"><div class="progress-bar-fill"></div></div>
+          <button type="button" class="btn btn-secondary" onclick="document.getElementById('image-file-input').click();">Choose Image</button>
+          <input type="file" id="image-file-input" accept="image/*" style="display: none;">
+          <div id="upload-progress" class="progress-bar" style="display: none;"><div id="upload-progress-fill" class="progress-bar-fill"></div></div>
         </div>
 
         <div class="form-group">
@@ -48,8 +48,8 @@
           <input type="text" id="name" required>
         </div>
         <div class="form-group">
-          <label for="bio">Short Bio / Quote</label>
-          <textarea id="bio" rows="3"></textarea>
+          <label for="description">Short Bio / Quote</label>
+          <textarea id="description" rows="3"></textarea>
         </div>
 
         <fieldset>
@@ -63,13 +63,17 @@
                 <input type="url" id="github">
             </div>
             <div class="form-group">
+                <label for="twitter">Twitter Profile URL</label>
+                <input type="url" id="twitter">
+            </div>
+            <div class="form-group">
                 <label for="instagram">Instagram Profile URL</label>
                 <input type="url" id="instagram">
             </div>
         </fieldset>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary" id="submit-btn">Create Profile</button>
+          <button type="submit" class="btn btn-primary">Create Profile</button>
         </div>
 
       </form>
@@ -83,8 +87,13 @@
     </div>
   </footer>
   
-  <script type="module" src="firebase-config.js"></script>
-  <script type="module" src="create-profile.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+  
+  <script src="firebase-config.js"></script>
+  <script src="create-profile.js"></script>
   <script src="script.js?v=3.0"></script>
+
 </body>
 </html>

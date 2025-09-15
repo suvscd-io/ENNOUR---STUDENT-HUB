@@ -3,11 +3,13 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /studentProfiles/{userId} {
-      // allow read only if authenticated (directory is not public read-by-everyone)
-      allow read: if request.auth != null;
-      // create & update only if authenticated and acting on own doc
-      allow create, update: if request.auth != null && request.auth.uid == userId;
-      // no deletes allowed
+      // Allow public read access for everyone
+      allow read: if true;
+      // Allow anyone to create a profile
+      allow create: if true;
+      // Disallow updates for now for security
+      allow update: if false;
+      // Disallow deletes
       allow delete: if false;
     }
   }
